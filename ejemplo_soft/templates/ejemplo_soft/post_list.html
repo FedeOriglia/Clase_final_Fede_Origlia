@@ -1,0 +1,23 @@
+{% extends 'ejemplo_soft/base.html' %}
+
+{% block contenido %}
+{% if user.is_authenticated %}
+    <a href="{% url 'ejemplo-soft-crear' %}">Crear Post</a>
+    <a href="{% url 'ejemplo-soft-avatars-actualizar' user.id %}">Actualizar Avatar</a>
+    <a href="{% url 'ejemplo-soft-users-actualizar' user.id %}">Actualizar Perfil</a>
+    <a href="{% url 'ejemplo-soft-mensajes-listar' %}">Mensajes</a>
+    {% endif %}
+<ul>
+{% for post in object_list %}
+    <li>{{post.titulo}}</li>
+    <li>
+        {{post.publicado_el}} - - {{post.titulo}}
+        {% if user.is_authenticated %}
+            <a href="{% url 'ejemplo-soft-borrar' post.id %}">Borrar</a>
+            <a href="{% url 'ejemplo-soft-actualizar' post.id %}">Actualizar</a>
+            {% endif %}
+        <a href="{% url 'ejemplo-soft-detalle' post.id %}">Ver</a>
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}

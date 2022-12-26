@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class EjemploDosConfig(AppConfig):
+class EjemploSoftConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'ejemplo_dos'
+    name = 'ejemplo_soft'

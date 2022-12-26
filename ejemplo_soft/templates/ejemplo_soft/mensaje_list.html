@@ -1,4 +1,4 @@
-{% extends 'ejemplo_dos/base.html' %}
+{% extends 'ejemplo_soft/base.html' %}
 
 {% block contenido %}
 <ul>
@@ -6,7 +6,7 @@
     <li>
         {{mensaje.enviado_el}} - - {{mensaje.email}} -- {{mensaje.nombre}} 
         
-        <a href="{% url 'ejemplo-dos-mensajes-detalle' mensaje.id %}">Ver</a>
+        <a href="{% url 'ejemplo-soft-mensajes-detalle' mensaje.id %}">Ver</a>
     </li>
 {% endfor %}
 </ul>

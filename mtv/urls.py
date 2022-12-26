@@ -18,8 +18,8 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 from ejemplo.views import (mostrar_familiares, BuscarFamiliar, AltaFamiliar, ActualizarFamiliar, BorrarFamiliar, FamiliarList, FamiliarCrear, FamiliarBorrar, FamiliarActualizar, FamiliarDetalle)
-from ejemplo_dos.views import index, PostList, PostCrear
-from ejemplo_dos.views import (index, PostDetalle, PostListar, PostCrear,
+from ejemplo_soft.views import index, PostList, PostCrear
+from ejemplo_soft.views import (index, PostDetalle, PostListar, PostCrear,
                                PostBorrar, PostActualizar, UserSignUp, UserLogin,
                                UserLogout, AvatarActualizar, UserActualizar,
                                MensajeCrear, MensajeListar, MensajeDetalle, About)
@@ -37,22 +37,22 @@ urlpatterns = [
     path('panel-familia/<int:pk>/borrar', FamiliarBorrar.as_view()), # NUEVA RUTA PARA LISTAR FAMILIAR
     path('panel-familia/<int:pk>/actualizar', FamiliarActualizar.as_view()), # NUEVA RUTA PARA LISTAR FAMILIAR
     path('panel-familia/<int:pk>/detalle', FamiliarDetalle.as_view()), # NUEVA RUTA PARA LISTAR FAMILIAR
-    path('ejemplo-dos/', index, name="ejemplo-dos-index"),
-    path('ejemplo-dos/listar/', PostList.as_view(), name="ejemplo-dos-listar"),
-    path('ejemplo-dos/<int:pk>/detalle/', PostDetalle.as_view(), name="ejemplo-dos-detalle"),
-    path('ejemplo-dos/listar/', PostListar.as_view(), name="ejemplo-dos-listar"),
-    path('ejemplo-dos/crear/', PostCrear.as_view(), name="ejemplo-dos-crear"),
-    path('ejemplo-dos/<int:pk>/borrar/', PostBorrar.as_view(), name="ejemplo-dos-borrar"),
-    path('ejemplo-dos/<int:pk>/actualizar/', PostActualizar.as_view(), name="ejemplo-dos-actualizar"),
-    path('ejemplo-dos/signup/', UserSignUp.as_view(), name="ejemplo-dos-signup"),
-    path('ejemplo-dos/login/', UserLogin.as_view(), name="ejemplo-dos-login"),
-    path('ejemplo-dos/logout/', UserLogout.as_view(), name="ejemplo-dos-logout"),
-    path('ejemplo-dos/avatars/<int:pk>/actualizar/', AvatarActualizar.as_view(), name="ejemplo-dos-avatars-actualizar"),
-    path('ejemplo-dos/users/<int:pk>/actualizar/', UserActualizar.as_view(), name="ejemplo-dos-users-actualizar"),
-    path('ejemplo-dos/mensajes/crear/', MensajeCrear.as_view(), name="ejemplo-dos-mensajes-crear"),
-    path('ejemplo-dos/mensajes/listar/', MensajeListar.as_view(), name="ejemplo-dos-mensajes-listar"),
-    path('ejemplo-dos/mensajes/<int:pk>/detalle/', MensajeDetalle.as_view(), name="ejemplo-dos-mensajes-detalle"),
-    path('ejemplo-dos/about/', About, name="ejemplo-dos-about"),
+    path('ejemplo-soft/', index, name="ejemplo-soft-index"),
+    path('ejemplo-soft/listar/', PostList.as_view(), name="ejemplo-soft-listar"),
+    path('ejemplo-soft/<int:pk>/detalle/', PostDetalle.as_view(), name="ejemplo-soft-detalle"),
+    path('ejemplo-soft/listar/', PostListar.as_view(), name="ejemplo-soft-listar"),
+    path('ejemplo-soft/crear/', PostCrear.as_view(), name="ejemplo-soft-crear"),
+    path('ejemplo-soft/<int:pk>/borrar/', PostBorrar.as_view(), name="ejemplo-soft-borrar"),
+    path('ejemplo-soft/<int:pk>/actualizar/', PostActualizar.as_view(), name="ejemplo-soft-actualizar"),
+    path('ejemplo-soft/signup/', UserSignUp.as_view(), name="ejemplo-soft-signup"),
+    path('ejemplo-soft/login/', UserLogin.as_view(), name="ejemplo-soft-login"),
+    path('ejemplo-soft/logout/', UserLogout.as_view(), name="ejemplo-soft-logout"),
+    path('ejemplo-soft/avatars/<int:pk>/actualizar/', AvatarActualizar.as_view(), name="ejemplo-soft-avatars-actualizar"),
+    path('ejemplo-soft/users/<int:pk>/actualizar/', UserActualizar.as_view(), name="ejemplo-soft-users-actualizar"),
+    path('ejemplo-soft/mensajes/crear/', MensajeCrear.as_view(), name="ejemplo-soft-mensajes-crear"),
+    path('ejemplo-soft/mensajes/listar/', MensajeListar.as_view(), name="ejemplo-soft-mensajes-listar"),
+    path('ejemplo-soft/mensajes/<int:pk>/detalle/', MensajeDetalle.as_view(), name="ejemplo-soft-mensajes-detalle"),
+    path('ejemplo-soft/about/', About, name="ejemplo-soft-about"),
     ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
