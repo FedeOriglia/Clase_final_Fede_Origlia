@@ -17,7 +17,6 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
-from ejemplo.views import (mostrar_familiares, BuscarFamiliar, AltaFamiliar, ActualizarFamiliar, BorrarFamiliar, FamiliarList, FamiliarCrear, FamiliarBorrar, FamiliarActualizar, FamiliarDetalle)
 from ejemplo_soft.views import index, PostList, PostCrear
 from ejemplo_soft.views import (index, PostDetalle, PostListar, PostCrear,
                                PostBorrar, PostActualizar, UserSignUp, UserLogin,
@@ -27,16 +26,6 @@ from ejemplo_soft.views import (index, PostDetalle, PostListar, PostCrear,
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('mi-familia/', mostrar_familiares),
-    path('mi-familia/buscar', BuscarFamiliar.as_view()),
-    path('mi-familia/alta', AltaFamiliar.as_view()),
-    path('mi-familia/actualizar/<int:pk>', ActualizarFamiliar.as_view()),
-    path('mi-familia/borrar/<int:pk>', BorrarFamiliar.as_view()),
-    path('panel-familia/', FamiliarList.as_view()), # NUEVA RUTA PARA LISTAR FAMILIAR
-    path('panel-familia/crear', FamiliarCrear.as_view()), # NUEVA RUTA PARA LISTAR FAMILIAR
-    path('panel-familia/<int:pk>/borrar', FamiliarBorrar.as_view()), # NUEVA RUTA PARA LISTAR FAMILIAR
-    path('panel-familia/<int:pk>/actualizar', FamiliarActualizar.as_view()), # NUEVA RUTA PARA LISTAR FAMILIAR
-    path('panel-familia/<int:pk>/detalle', FamiliarDetalle.as_view()), # NUEVA RUTA PARA LISTAR FAMILIAR
     path('ejemplo-soft/', index, name="ejemplo-soft-index"),
     path('ejemplo-soft/listar/', PostList.as_view(), name="ejemplo-soft-listar"),
     path('ejemplo-soft/<int:pk>/detalle/', PostDetalle.as_view(), name="ejemplo-soft-detalle"),
